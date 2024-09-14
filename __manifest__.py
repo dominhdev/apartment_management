@@ -5,8 +5,8 @@
     'version': '2.0',
     'summary': "Management Base config of Viproperty.",
     'author': 'Viproperty JSC',
-    'price': '1000.0',
-    'currency': 'USD',
+    # 'price': '1000.0',
+    # 'currency': 'USD',
     'depends': [
         'base',
         'property_management',
