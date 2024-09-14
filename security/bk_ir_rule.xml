@@ -1,0 +1,293 @@
+<odoo>
+    <data noupdate="0">
+
+	<!-- ====================CRM=================-->
+		<record model="ir.rule" id="vip_crm_staff">
+			<field name="name">VIP: CRM Staff new edit view only follow and create</field>
+			<field name="model_id" ref="crm.model_crm_lead"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">['|',('message_partner_ids','child_of',[user.partner_id.id]),('create_uid','=',user.id)]</field>
+			<field name="groups" eval="[
+			(4, ref('vip_leasing_user_group')),
+			(4, ref('vip_marketing_user_group')),
+			(4, ref('vip_sale_user_group')),
+			(4, ref('vip_leasing_leader_group')),
+			(4, ref('vip_sale_leader_group')),
+			(4, ref('vip_marketing_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_crm_manager">
+			<field name="name">VIP: CRM Manager new edit view only follow, create, and their user type</field>
+			<field name="model_id" ref="crm.model_crm_lead"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">['|',('message_partner_ids','child_of',[user.partner_id.id]),'|',('create_uid','=',user.id),('create_uid.vip_user_type','=',user.vip_user_type)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_sale_leader_group')),
+				(4, ref('vip_marketing_leader_group')),
+				(4, ref('vip_leasing_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_crm_admin">
+			<field name="name">VIP: CRM Admin</field>
+			<field name="model_id" ref="crm.model_crm_lead"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[(1, '=', 1)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_marketing_leader_group'))
+			]"/>
+		</record>
+
+	<!-- ====================property=================-->
+		<record model="ir.rule" id="vip_property_staff">
+			<field name="name">VIP: Property Staff new edit view</field>
+			<field name="model_id" ref="om_account_asset.model_account_asset_asset"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[(1, '=', 1)]</field>
+			<field name="groups" eval="[
+			(4, ref('vip_pm_user_group')),
+			(4, ref('vip_leasing_user_group')),
+			(4, ref('vip_marketing_user_group')),
+			(4, ref('vip_sale_user_group')),
+			(4, ref('vip_pm_leader_group')),
+			(4, ref('vip_leasing_leader_group')),
+			(4, ref('vip_marketing_leader_group')),
+			(4, ref('vip_sale_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_property_staff_only_view">
+			<field name="name">VIP: Property Staff only view</field>
+			<field name="model_id" ref="om_account_asset.model_account_asset_asset"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="0" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="0" name="perm_create"/>
+			<field name="domain_force">[(1, '=', 1)]</field>
+			<field name="groups" eval="[
+			(4, ref('vip_furnishing_user_group')),
+			(4, ref('vip_furnishing_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_property_admin">
+			<field name="name">VIP: Property Admin</field>
+			<field name="model_id" ref="om_account_asset.model_account_asset_asset"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[(1, '=', 1)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_sale_leader_group'))
+			]"/>
+		</record>
+
+		<!-- ====================landlord detail=================-->
+		<record model="ir.rule" id="vip_landlord_staff">
+			<field name="name">VIP: Landlord Detail Staff new edit view</field>
+			<field name="model_id" ref="property_landlord_management.model_landlord_partner"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[(1, '=', 1)]</field>
+			<field name="groups" eval="[
+			(4, ref('vip_sale_user_group')),
+			(4, ref('vip_sale_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_landlord_admin">
+			<field name="name">VIP: Landlord Detail Admin</field>
+			<field name="model_id" ref="property_landlord_management.model_landlord_partner"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[(1, '=', 1)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_sale_leader_group'))
+			]"/>
+		</record>
+
+	<!--================landlord contract================-->
+		<record model="ir.rule" id="vip_landlord_contract_sale_staff">
+			<field name="name">VIP: Landlord Contract Sale Staff new edit view</field>
+			<field name="model_id" ref="account.model_account_analytic_account"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[('create_uid', '=', user.id)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_sale_user_group')),
+				(4, ref('vip_sale_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_landlord_contract_pm_staff">
+			<field name="name">VIP: Landlord Contract PM Staff new edit view</field>
+			<field name="model_id" ref="account.model_account_analytic_account"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[('property_id.property_manager','=',user.partner_id.id)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_pm_user_group')),
+				(4, ref('vip_pm_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_landlord_contract_sale_admin">
+			<field name="name">VIP: Landlord Contract Sale Admin</field>
+			<field name="model_id" ref="account.model_account_analytic_account"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">['|',('create_uid','=',user.id),('create_uid.vip_user_type','=',user.vip_user_type)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_sale_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_landlord_contract_pm_admin">
+			<field name="name">VIP: Landlord Contract PM Admin</field>
+			<field name="model_id" ref="account.model_account_analytic_account"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[('property_id.property_manager.user_id.vip_user_type','=',user.vip_user_type)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_pm_leader_group'))
+			]"/>
+		</record>
+
+		<!-- ====================tenant detail=================-->
+		<record model="ir.rule" id="vip_tenant_staff">
+			<field name="name">VIP: Tenant Detail Staff new edit view</field>
+			<field name="model_id" ref="property_management.model_tenant_partner"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[(1, '=', 1)]</field>
+			<field name="groups" eval="[
+			(4, ref('vip_leasing_user_group')),
+			(4, ref('vip_leasing_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_tenant_admin">
+			<field name="name">VIP: Tenant Detail Admin</field>
+			<field name="model_id" ref="property_management.model_tenant_partner"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">[(1, '=', 1)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_leasing_leader_group'))
+			]"/>
+		</record>
+
+	<!--================tenant contract================-->
+		<record model="ir.rule" id="vip_tenant_contract_staff">
+			<field name="name">VIP: Tenant Contract Staff new edit view</field>
+			<field name="model_id" ref="account.model_account_analytic_account"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">['|',('create_uid','=',user.id),('property_id.property_manager','=',user.partner_id.id)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_pm_user_group')),
+				(4, ref('vip_sale_user_group')),
+				(4, ref('vip_sale_leader_group')),
+				(4, ref('vip_leasing_user_group')),
+				(4, ref('vip_pm_leader_group')),
+				(4, ref('vip_leasing_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_tenant_contract_admin">
+			<field name="name">VIP: Tenant Contract Admin</field>
+			<field name="model_id" ref="account.model_account_analytic_account"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">['|',('create_uid','=',user.id),'|',('create_uid.vip_user_type','=',user.vip_user_type), ('property_id.property_manager','=',user.partner_id.id)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_pm_leader_group')),
+				(4, ref('vip_leasing_leader_group'))
+			]"/>
+		</record>
+
+		<!--================Maintain================-->
+		<record model="ir.rule" id="vip_maintain_staff">
+			<field name="name">VIP: Maintain Staff new edit view</field>
+			<field name="model_id" ref="maintenance.model_maintenance_request"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">['|',('create_uid','=',user.id),('property_id.property_manager','=',user.partner_id.id)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_pm_user_group')),
+				(4, ref('vip_pm_leader_group')),
+				(4, ref('vip_furnishing_user_group')),
+				(4, ref('vip_furnishing_leader_group'))
+			]"/>
+		</record>
+
+		<record model="ir.rule" id="vip_maintain_admin">
+			<field name="name">VIP: Maintain Admin</field>
+			<field name="model_id" ref="maintenance.model_maintenance_request"/>
+			<field name="global" eval="True"/>
+			<field eval="0" name="perm_unlink"/>
+			<field eval="1" name="perm_write"/>
+			<field eval="1" name="perm_read"/>
+			<field eval="1" name="perm_create"/>
+			<field name="domain_force">['|',('create_uid','=',user.id), '|',('create_uid.vip_user_type','=',user.vip_user_type), ('property_id.property_manager','=',user.partner_id.id)]</field>
+			<field name="groups" eval="[
+				(4, ref('vip_pm_leader_group')),
+				(4, ref('vip_furnishing_leader_group'))
+			]"/>
+		</record>
+
+    </data>
+</odoo>

@@ -1,0 +1,8 @@
+<odoo>
+    <data noupdate="1">
+         <record id='vip_check_change_action' model="ir.config_parameter">
+			<field name="key">vip_check_change_action</field>
+            <field name="value">0</field>
+		</record>
+    </data>
+</odoo>

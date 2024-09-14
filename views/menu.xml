@@ -1,0 +1,162 @@
+<odoo>
+    <menuitem name="Admins"
+          id="menu_admin_custom_root"
+          web_icon="vip_base,static/img/icon.svg"
+          sequence="271" groups="base.group_system"/>
+
+    <menuitem id="menu_users_root_second"
+          name="Users"
+          parent="menu_admin_custom_root" sequence="1"
+          />
+
+    <menuitem id="menu_users"
+          name="Users"
+          parent="menu_users_root_second" sequence="1"
+          action="action_vip_res_users"/>
+
+    <menuitem id="menu_profile_group_history"
+          name="Profile Group History"
+          groups="base.group_no_one"
+          parent="menu_users_root_second" sequence="2"
+          action="action_profile_group_history"/>
+
+<!--    Property Management-->
+    <record model="ir.ui.menu" id="property_management.menu_property_main">
+        <field name="groups_id" eval="[(6, 0, [
+            ref('vip_base.vip_furnishing_user_group'),
+            ref('vip_base.vip_marketing_user_group'),
+            ref('vip_base.vip_sale_user_group'),
+            ref('property_maintenance.groups_property_maintenance_worker'),
+            ref('vip_base.vip_pm_user_group'),
+            ref('vip_base.vip_furnishing_leader_group'),
+            ref('vip_base.vip_marketing_leader_group'),
+            ref('vip_base.vip_sale_leader_group'),
+            ref('vip_base.vip_pm_leader_group')
+            ])]"/>
+    </record>
+<!--    Property Details-->
+    <record model="ir.ui.menu" id="property_management.menu_property_sub">
+        <field name="groups_id" eval="[(6, 0, [
+            ref('vip_base.vip_furnishing_user_group'),
+            ref('vip_base.vip_leasing_user_group'),
+            ref('vip_base.vip_marketing_user_group'),
+            ref('vip_base.vip_sale_user_group'),
+            ref('property_maintenance.groups_property_maintenance_worker'),
+            ref('vip_base.vip_pm_user_group'),
+
+            ref('vip_base.vip_furnishing_leader_group'),
+            ref('vip_base.vip_leasing_leader_group'),
+            ref('vip_base.vip_marketing_leader_group'),
+            ref('vip_base.vip_sale_leader_group'),
+            ref('vip_base.vip_pm_leader_group')])]"/>
+    </record>
+<!--    Property Booking-->
+    <record model="ir.ui.menu" id="property_booking.menu_sub_property_creation">
+        <field name="groups_id" eval="[(6, 0, [
+            ref('base.group_system')])]"/>
+    </record>
+<!--Property Reporting-->
+    <record model="ir.ui.menu" id="property_management.menu_report_sub">
+        <field name="groups_id" eval="[(6, 0, [
+            ref('vip_base.vip_leasing_leader_group'),
+            ref('vip_base.vip_marketing_leader_group'),
+            ref('vip_base.vip_pm_leader_group')])]"/>
+    </record>
+<!--Tenant Details-->
+    <record model="ir.ui.menu" id="property_management.menu_tenant_details_sub">
+        <field name="groups_id" eval="[(6, 0, [
+            ref('vip_base.vip_sale_user_group'),
+            ref('vip_base.vip_sale_leader_group'),
+            ref('vip_base.vip_leasing_user_group'),
+            ref('vip_base.vip_leasing_leader_group'),
+            ref('vip_base.vip_pm_user_group')])]"/>
+    </record>
+<!--    Landlord Details no action-->
+    <record model="ir.ui.menu" id="property_landlord_management.menu_landlord_details_sub">
+        <field name="groups_id" eval="[(6, 0, [
+            ref('vip_base.vip_pm_user_group'),
+            ref('vip_base.vip_sale_user_group'),
+            ref('vip_base.vip_sale_leader_group')])]"/>
+    </record>
+<!--    Landlord Details have action-->
+    <record model="ir.ui.menu" id="property_landlord_management.menu_landlord_detail_id">
+        <field name="groups_id" eval="[(6, 0, [
+            ref('vip_base.vip_sale_user_group'),
+            ref('vip_base.vip_sale_leader_group')])]"/>
+    </record>
+<!--    Landlord Contract-->
+    <record model="ir.ui.menu" id="property_landlord_management.menu_tenancy_rents">
+        <field name="groups_id" eval="[(6, 0, [
+            ref('vip_base.vip_pm_user_group'),
+            ref('vip_base.vip_sale_user_group'),
+            ref('vip_base.vip_sale_leader_group')])]"/>
+    </record>
+
+    <record model="ir.ui.menu" id="property_management.menu_tenancy_rent">
+        <field name="groups_id" eval="[(6, 0, [
+            ref('base.group_system')])]"/>
+    </record>
+
+<!--   ==================== Leasing menu ======================= -->
+
+    <menuitem name="Leasing"
+          id="menu_vip_leasing_root"
+          web_icon="vip_base,static/img/leasing-icon.png"
+          sequence="273" groups="vip_base.vip_leasing_user_group"/>
+
+    <record model="ir.actions.act_window" id="vip_open_leasing_board_my_dash_action">
+        <field name="name">Leasing Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">form</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="board.board_my_dash_view"/>
+    </record>
+
+    <menuitem
+        id="menu_leasing_my_dashboard"
+        name="Leasing Dashboard"
+        parent="menu_vip_leasing_root"
+        action="vip_open_leasing_board_my_dash_action"
+        sequence="0"/>
+
+    <menuitem
+        id="menu_leasing_property"
+        name="Property"
+        parent="menu_vip_leasing_root"
+        sequence="1"/>
+
+    <menuitem
+        id="menu_leasing_my_crm"
+        name="CRM"
+        parent="menu_vip_leasing_root"
+        sequence="2"/>
+
+    <!--   ==================== PM menu ======================= -->
+
+    <menuitem name="PM"
+          id="menu_vip_pm_root"
+          web_icon="vip_property_management,static/img/pm.png"
+          sequence="274" groups="vip_base.vip_pm_user_group"/>
+
+    <record model="ir.actions.act_window" id="vip_open_pm_board_my_dash_action">
+        <field name="name">PM Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">form</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="board.board_my_dash_view"/>
+    </record>
+
+    <menuitem
+        id="menu_pm_my_dashboard"
+        name="PM Dashboard"
+        parent="menu_vip_pm_root"
+        action="vip_open_pm_board_my_dash_action"
+        sequence="0"/>
+
+    <menuitem
+        id="menu_pm_property"
+        name="Property"
+        parent="menu_vip_pm_root"
+        sequence="1"/>
+
+</odoo>

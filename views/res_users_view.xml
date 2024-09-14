@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="vip_res_users_view_form" model="ir.ui.view">
+        <field name="name">res.users.view.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='action_id']" position="after">
+                <field name="group_profile_id" domain="[('is_profile_group', '=', True)]"/>
+<!--                <field name="team_id"/>-->
+<!--                <field name="sale_team_id"/>-->
+            </xpath>
+        </field>
+    </record>
+    <record id="vip_res_users_view_tree" model="ir.ui.view">
+        <field name="name">res.users.view.tree.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='login']" position="after">
+                <field name="group_profile_id"/>
+                <field name="function"/>
+<!--                <field name="team_id"/>-->
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="vip_res_users_view_search_inherit_base">
+        <field name="name">vip.res.users.view.search.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <separator/>
+                <field name="group_profile_id"/>
+                <filter name="group_profile" string="Profile Group" domain="[('group_profile_id','!=',False)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_profile" string="Profile Group" domain="[]" context="{'group_by': 'group_profile_id'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vip_crm_res_users_form_view" model="ir.ui.view">
+        <field name="name">res.users.form.view</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="readonly">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='login']" position="attributes">
+                <attribute name="readonly">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='phone']" position="attributes">
+                <attribute name="readonly">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='mobile']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+<!--            <xpath expr="//field[@name='create_employee']" position="attributes">-->
+<!--                <attribute name="invisible">True</attribute>-->
+<!--            </xpath>-->
+            <xpath expr="//field[@name='mobile']" position="after">
+                <field name="group_profile_id" domain="[('is_profile_group', '=', True)]"/>
+                 <field name="vip_user_type" groups="base.group_system" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_vip_res_users" model="ir.actions.act_window">
+        <field name="name">Users</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.users</field>
+        <field name="domain">[]</field>
+<!--        <field name="domain">[('group_profile_id', '!=', False)]</field>-->
+        <field name="context">{}</field>
+    </record>
+
+    <record id="vip_res_users_view_search_inherit_hr" model="ir.ui.view">
+        <field name="name">res.users.view.search.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="hr.view_users_simple_form_inherit_hr"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='create_employee']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
