@@ -2,19 +2,19 @@
 ## Contact: [Website KoiERP](https://koierp.com/) or Email [thanhkoierp@gmail.com](mailto:thanhkoierp@gmail.com)
 
 ******
-![plot](./images/menushow.png)
+![plot](./apartment_management/images/menushow.png)
 ### Management Apartments, Rental, Rental agency, Entrust and Fees (electric, water, rent, ...etc).
 ### Include: Tenant Contract, Landlord Contract, Entrust Contract, PM Contract and Maintenance.
 ### Leasing user screen
-![plot](./images/leasing.png)
+![plot](./apartment_management/images/leasing.png)
 ### Apartment Manager user screen
-![plot](./images/pm.png)
+![plot](./apartment_management/images/pm.png)
 ### Apartment Screen
-![plot](./images/apartment.png)
+![plot](./apartment_management/images/apartment.png)
 ### Landlord Partner screen
-![plot](./images/landlordpartner.png)
+![plot](./apartment_management/images/landlordpartner.png)
 ### Tenant Partner screen
-![plot](./images/tenantpartner.png)
+![plot](./apartment_management/images/tenantpartner.png)
 ### Landlord contract have two flows:
 #### 1. Normal Contract: PM or Entrust contract must be created and status is In progress.
 #### 2. Entrust Contract: Entrust contract must be created and status is In progress.
@@ -32,28 +32,28 @@ Leasing user create invoice from Fee Schedule, the system auto:
 ### Screens
 * Tenant contract:
 
-![plot](./images/tenantcontract1.png)
-![plot](./images/tenantcontract2.png)
-![plot](./images/tenantcontract3.png)
-![plot](./images/tenantsch.png)
+![plot](./apartment_management/images/tenantcontract1.png)
+![plot](./apartment_management/images/tenantcontract2.png)
+![plot](./apartment_management/images/tenantcontract3.png)
+![plot](./apartment_management/images/tenantsch.png)
 
 * Deposit Tenant contract:
 
-![plot](./images/deposit.png)
+![plot](./apartment_management/images/deposit.png)
 
 * Landlord contract:
 
-![plot](./images/landcontract1.png)
-![plot](./images/landcontract2.png)
-![plot](./images/landcontract3.png)
-![plot](./images/landsch.png)
-![plot](./images/commissioninv.png)
+![plot](./apartment_management/images/landcontract1.png)
+![plot](./apartment_management/images/landcontract2.png)
+![plot](./apartment_management/images/landcontract3.png)
+![plot](./apartment_management/images/landsch.png)
+![plot](./apartment_management/images/commissioninv.png)
 
 * PM contract:
 
-![plot](./images/pmcontract1.png)
-![plot](./images/pmcontract2.png)
-![plot](./images/pmsch.png)
+![plot](./apartment_management/images/pmcontract1.png)
+![plot](./apartment_management/images/pmcontract2.png)
+![plot](./apartment_management/images/pmsch.png)
 
 ***
 

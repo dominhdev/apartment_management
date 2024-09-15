@@ -1,18 +1,101 @@
 <section class="oe_container">
     <div>
         <div class="text-center col-md-12">
-            <!-- <a target="new" href="http://koierp.com"> -->
-            <!-- <img class src="1.png"> -->
-            <!-- </a> -->
-            <div class="col-md-12 mb8 mt32">
-                <h1 class="text-center"></h1>
-                <p style="text-align: center;">
-                </p>
-                <h2 style="text-align: center;">HOW PMS WILL GET YOU MORE OUT OF <b>
-                    </b></h2>
-                <h1 class="text-center"></h1>
-                <p></p>
-            </div>
+            <h2 id="property-management">Property Management</h2>
+            <h2 id="contact-website-koierp-https-koierp-com-or-email-thanhkoierp-gmail-com-mailto-thanhkoierp-gmail-com-">
+                Contact: <a href="https://koierp.com/">Website KoiERP</a> or Email <a
+                    href="mailto:thanhkoierp@gmail.com">thanhkoierp@gmail.com</a></h2>
+            <hr>
+            <p><img src="menushow.png" width='100%' ></p>
+            <h3 id="management-apartments-rental-rental-agency-entrust-and-fees-electric-water-rent-etc-">Management
+                Apartments, Rental, Rental agency, Entrust and Fees (electric, water, rent, ...etc).</h3>
+            <h3 id="include-tenant-contract-landlord-contract-entrust-contract-pm-contract-and-maintenance-">Include:
+                Tenant Contract, Landlord Contract, Entrust Contract, PM Contract and Maintenance.</h3>
+            <h3 id="leasing-user-screen">Leasing user screen</h3>
+            <p><img src="leasing.png" width='100%' ></p>
+            <h3 id="apartment-manager-user-screen">Apartment Manager user screen</h3>
+            <p><img src="pm.png" width='100%' ></p>
+            <h3 id="apartment-screen">Apartment Screen</h3>
+            <p><img src="apartment.png" width='100%' ></p>
+            <h3 id="landlord-partner-screen">Landlord Partner screen</h3>
+            <p><img src="landlordpartner.png" width='100%' ></p>
+            <h3 id="tenant-partner-screen">Tenant Partner screen</h3>
+            <p><img src="tenantpartner.png" width='100%' ></p>
+            <h3 id="landlord-contract-have-two-flows-" style=" color: orangered; ">Landlord contract have two flows:</h3>
+            <h3 id="1-normal-contract-pm-or-entrust-contract-must-be-created-and-status-is-in-progress-" style=" color: cornflowerblue; ">1. Normal
+                Contract: PM or Entrust contract must be created and status is In progress.</h3>
+
+            <hr>
+            <p>Tenant contract be signed, the system auto:</p>
+            <pre><code><span class="hljs-keyword">Create</span> Landlord contract.
+<span class="hljs-keyword">Create</span> Commision <span class="hljs-keyword">with</span> Landlord, <span
+                        class="hljs-keyword">and</span> deducting commission <span
+                        class="hljs-keyword">in</span> Rent <span class="hljs-keyword">cost</span> <span
+                        class="hljs-keyword">and</span> <span class="hljs-keyword">Management</span> fee <span
+                        class="hljs-keyword">until</span> the <span class="hljs-keyword">full</span> amount <span
+                        class="hljs-keyword">of</span> the commission.
+<span class="hljs-keyword">Create</span> Fee Schedule follow <span class="hljs-keyword">Start</span> <span
+                        class="hljs-built_in">date</span> <span class="hljs-keyword">and</span> <span
+                        class="hljs-keyword">End</span> <span class="hljs-built_in">date</span> <span
+                        class="hljs-keyword">include</span>: Rent <span class="hljs-keyword">cost</span>, <span
+                        class="hljs-keyword">Management</span> fee, Appartment fee (<span
+                        class="hljs-keyword">case</span> apartment available <span class="hljs-keyword">before</span>, require PM contract must <span
+                        class="hljs-keyword">In</span> progress)
+</code></pre>
+            <p>Leasing user create Deposit and Accounting user create payment follow amount receive.</p>
+            <p>Leasing user create invoice from Fee Schedule, the system auto:</p>
+            <pre><code><span class="hljs-keyword">Create</span> invoice <span class="hljs-keyword">in</span> Fee Schedule <span
+                    class="hljs-keyword">of</span> Landlord contract, PM <span class="hljs-keyword">or</span> Entrust contract follow <span
+                    class="hljs-keyword">Start</span> <span class="hljs-built_in">date</span> <span
+                    class="hljs-keyword">from</span> Schedule
+</code></pre>
+            <h3 id="screens">Screens</h3>
+            <ul>
+                <h3>Tenant contract:</h3>
+            </ul>
+            <p><img src="tenantcontract1.png" width='100%' >
+                <img src="tenantcontract2.png" width='100%' >
+                <img src="tenantcontract3.png" width='100%' >
+                <img src="tenantsch.png" width='100%' ></p>
+            <ul>
+                <h3>Deposit Tenant contract:</h3>
+            </ul>
+            <p><img src="deposit.png" width='100%' ></p>
+            <ul>
+                <h3>Landlord contract:</h3>
+            </ul>
+            <p><img src="landcontract1.png" width='100%' >
+                <img src="landcontract2.png" width='100%' >
+                <img src="landcontract3.png" width='100%' >
+                <img src="landsch.png" width='100%' >
+                <img src="commissioninv.png" width='100%' ></p>
+            <ul>
+                <h3>PM contract:</h3>
+            </ul>
+            <p><img src="pmcontract1.png" width='100%' >
+                <img src="pmcontract2.png" width='100%' >
+                <img src="pmsch.png" width='100%' ></p>
+            <hr>
+            <h3 id="2-entrust-contract-must-require-entrust-contract-in-progress-" style=" color: cornflowerblue; ">2. Entrust Contract: must require
+                Entrust contract (In progress)</h3>
+            <hr>
+            <p>When Tenant contract be signed, the system auto:</p>
+            <pre><code><span class="hljs-keyword">Create</span> Fee Schedule follow <span
+                    class="hljs-keyword">Start</span> <span class="hljs-built_in">date</span> <span
+                    class="hljs-keyword">and</span> <span class="hljs-keyword">End</span> <span class="hljs-built_in">date</span> <span
+                    class="hljs-keyword">include</span>: Rent <span class="hljs-keyword">cost</span>, <span
+                    class="hljs-keyword">Management</span> fee, Appartment fee (<span class="hljs-keyword">case</span> apartment available <span
+                    class="hljs-keyword">before</span>, require PM contract must <span class="hljs-keyword">In</span> progress)
+</code></pre>
+            <p>Leasing user create Deposit and Accounting user create payment follow amount receive.</p>
+            <p>When Leasing user create invoice from Fee Schedule, the system auto:</p>
+            <pre><code><span class="hljs-keyword">Create</span> invoice <span class="hljs-keyword">in</span> Fee Schedule <span
+                    class="hljs-keyword">of</span> Landlord contract, PM <span class="hljs-keyword">or</span> Entrust contract follow <span
+                    class="hljs-keyword">Start</span> <span class="hljs-built_in">date</span> <span
+                    class="hljs-keyword">from</span> Schedule
+</code></pre>
+            <hr>
+
         </div>
     </div>
 </section>
