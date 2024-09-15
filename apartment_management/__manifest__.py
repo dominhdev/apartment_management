@@ -5,7 +5,7 @@
     'version': '2.0',
     'summary': "Management Base config of Apartment.",
     'author': 'ThanhKoi',
-    'price': '1000.0',
+    'price': '10.0',
     'currency': 'USD',
     'depends': [
         'base',
