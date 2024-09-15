@@ -1,9 +1,9 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Apartment Management Base',
+    'name': 'Apartment Management',
     'version': '2.0',
-    'summary': "Management Base config of Apartment.",
+    'summary': "Management serviced apartment",
     'author': 'ThanhKoi',
     'price': '10.0',
     'currency': 'USD',
