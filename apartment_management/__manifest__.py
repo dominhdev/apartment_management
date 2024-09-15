@@ -1,10 +1,10 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Viproperty Base',
+    'name': 'Apartment Management Base',
     'version': '2.0',
-    'summary': "Management Base config of Viproperty.",
-    'author': 'Viproperty JSC',
+    'summary': "Management Base config of Apartment.",
+    'author': 'ThanhKoi',
     'price': '1000.0',
     'currency': 'USD',
     'depends': [
